@@ -1,3 +1,5 @@
+const gulp = require('gulp');
+
 function funcaoPadrao(callback) {
     console.log("\n Executando via \x1b[31mGULP\x1b[37m \n");
     callback();
@@ -13,5 +15,5 @@ function digaTchau(){
     console.log(" \x1b[33mTchau!!\x1b[1m\x1b[31m Gulp \n \x1b[0m\x1b[37m");
 }
 
-exports.default = funcaoPadrao;
+exports.default = gulp.series (funcaoPadrao, digaOi);
 exports.digaOi = digaOi;
